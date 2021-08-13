@@ -8,7 +8,7 @@ const TOKEN = process.env.TELEGRAM_TOKEN || '1748785167:AAEfjVDBAQXYBGGlMw1B_rEz
 const url = 'https://<PUBLIC-URL>';
 const port = process.env.PORT;
 
-const TelegramBot = require('../..');
+const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
 
 // No need to pass any parameters as we will handle the updates with Express
