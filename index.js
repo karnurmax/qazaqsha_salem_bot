@@ -5,8 +5,8 @@
 /* eslint-disable no-console */
 
 const TOKEN = process.env.TELEGRAM_TOKEN || '1748785167:AAEfjVDBAQXYBGGlMw1B_rEzuGv6FnH0Bf0';
-const url = 'https://<PUBLIC-URL>';
-const port = process.env.PORT;
+const url = 'https://qazaqsha-salem-bot.herokuapp.com';
+const port = process.env.PORT||5000;
 
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
