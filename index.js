@@ -15,7 +15,7 @@ const express = require('express');
 const bot = new TelegramBot(TOKEN);
 
 // This informs the Telegram servers of the new webhook.
-bot.setWebHook(`${url}/bot${TOKEN}`);
+bot.setWebHook(`${url}/botwh${TOKEN}`);
 
 const app = express();
 
