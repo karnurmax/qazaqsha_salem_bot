@@ -15,7 +15,7 @@ const express = require('express');
 const bot = new TelegramBot(TOKEN);
 
 // This informs the Telegram servers of the new webhook.
-bot.setWebHook(`${url}/botwh${TOKEN}`);
+bot.setWebHook(`${url}/bot${TOKEN}`);
 
 const app = express();
 
@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json());
 
 // We are receiving updates at the route below!
-app.post(`/bot${TOKEN}`, (req, res) => {
+app.post(`/botwh${TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
@@ -35,5 +35,6 @@ app.listen(port, () => {
 
 // Just to ping!
 bot.on('message', msg => {
-  bot.sendMessage(msg.chat.id, 'I am alive!');
+  console.log(msg);
+  bot.sendMessage(msg.chat.id, 'I am alive! But in dev mode (beta testing)');
 });
