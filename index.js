@@ -36,5 +36,5 @@ app.listen(port, () => {
 // Just to ping!
 bot.on('message', msg => {
   console.log(msg);
-  bot.sendMessage(msg.chat.id, `received msg: ${JSON.stringify(msg)}`);
+  bot.sendMessage(msg.chat.id, `received msg: ${JSON.stringify(msg, null, '\t')}`);
 });
