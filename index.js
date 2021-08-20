@@ -9,9 +9,16 @@ const TOKEN =
   "1748785167:AAEfjVDBAQXYBGGlMw1B_rEzuGv6FnH0Bf0";
 const url = "https://qazaqsha-salem-bot.herokuapp.com";
 const port = process.env.PORT || 5000;
+const mongoUrl = 'mongodb+srv://cheenv:Net987654321$@salem-bot.wrbh3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
+const {MongoClient} = require('mongodb');
+const { Mongoose } = require("mongoose");
+const mongoose = require('mongoose');
+mongoose.connect(mongoUrl,  { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+  console.log('mongodb connection successful');
+})
 
 // No need to pass any parameters as we will handle the updates with Express
 const bot = new TelegramBot(TOKEN);
