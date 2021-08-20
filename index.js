@@ -6,10 +6,10 @@
 
 const TOKEN =
   process.env.TELEGRAM_TOKEN ||
-  "1748785167:AAEfjVDBAQXYBGGlMw1B_rEzuGv6FnH0Bf0";
-const url = "https://qazaqsha-salem-bot.herokuapp.com";
+  "";
+const url = "";
 const port = process.env.PORT || 5000;
-const mongoUrl = 'mongodb+srv://cheenv:Net987654321$@salem-bot.wrbh3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongoUrl = ''
 
 const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
