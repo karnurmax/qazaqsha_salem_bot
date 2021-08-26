@@ -6,7 +6,7 @@
 
 const TOKEN = process.env.TELEGRAM_TOKEN || '1748785167:AAEfjVDBAQXYBGGlMw1B_rEzuGv6FnH0Bf0';
 const url = 'https://qazaqsha-salem-bot.herokuapp.com';
-const port = process.env.PORT||5000;
+const port = process.env.PORT || 5000;
 
 const TelegramBot = require('node-telegram-bot-api');
 const express = require('express');
@@ -22,7 +22,7 @@ const app = express();
 // parse the updates to JSON
 app.use(express.json());
 
-app.get('/', (req,res)=>{
+app.get('/', (req, res) => {
   res.send('Qazaqsha telegram bot')
 })
 // We are receiving updates at the route below!
@@ -39,5 +39,5 @@ app.listen(port, () => {
 // Just to ping!
 bot.on('message', msg => {
   console.log(msg);
-  bot.sendMessage(msg.chat.id, `Salem, @${msg.from.username}`);
+  bot.sendMessage(msg.chat.id, `Salem, @${msg.from.username}. your msg:${JSON.stringify(msg, null, '\t')}`);
 });
