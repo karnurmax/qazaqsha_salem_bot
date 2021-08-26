@@ -22,6 +22,9 @@ const app = express();
 // parse the updates to JSON
 app.use(express.json());
 
+app.get('/', (req,res)=>{
+  res.send('Qazaqsha telegram bot')
+})
 // We are receiving updates at the route below!
 app.post(`/bot${TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
