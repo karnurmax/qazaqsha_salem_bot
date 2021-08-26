@@ -41,3 +41,7 @@ bot.on('message', msg => {
   console.log(msg);
   bot.sendMessage(msg.chat.id, `Salem, @${msg.from.username}. your msg:${JSON.stringify(msg, null, '\t')}`);
 });
+
+bot.onText(/test/, msg => {
+  bot.sendMessage(msg.chat.id, `cmd: ${JSON.stringify(msg, null, '\t')}`)
+})
