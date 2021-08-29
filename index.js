@@ -42,16 +42,15 @@ bot.on('message', msg => {
   bot.sendMessage(msg.chat.id, `Salem, @${msg.from.username}. your msg:${JSON.stringify(msg, null, '\t')}`);
 });
 
-bot.on('new_chat_members', msg =>{
-  bot.sendMessage(msg.chat.id,`new_chat_members`);
+bot.on('new_chat_members', msg => {
+  const newMembers = msg.new_chat_members;
+  newMembers.forEach(member=>{
+    const firstName = member.first_name;
+    const lastName = member.last_name;
+    bot.sendMessage(msg.chat.id,`Salem, ${firstName} ${lastName}!\n
+    Бот болмасаңыз мына сұраққа жауап бересіз бе, өтініш:
+    1+1=?
+    (жауап беруге 60 секунд беріледі)
+    `);
+  })
 })
-
-bot.on('new_chat_member', msg =>{
-  bot.sendMessage(msg.chat.id,`new_chat_member`);
-})
-
-
-bot.on('new_chat_participant', msg =>{
-  bot.sendMessage(msg.chat.id,`new_chat_participant`);
-})
-
