@@ -4,7 +4,7 @@
  */
 /* eslint-disable no-console */
 
-const TOKEN = process.env.TELEGRAM_TOKEN || '1748785167:AAEfjVDBAQXYBGGlMw1B_rEzuGv6FnH0Bf0';
+const TOKEN = process.env.TELEGRAM_TOKEN;
 const url = 'https://qazaqsha-salem-bot.herokuapp.com';
 const port = process.env.PORT || 5000;
 
