@@ -42,6 +42,16 @@ bot.on('message', msg => {
   bot.sendMessage(msg.chat.id, `Salem, @${msg.from.username}. your msg:${JSON.stringify(msg, null, '\t')}`);
 });
 
-bot.onText(/test/, msg => {
-  bot.sendMessage(msg.chat.id, `cmd: ${JSON.stringify(msg, null, '\t')}`)
+bot.on('new_chat_members', msg =>{
+  bot.sendMessage(msg.chat.id,`new_chat_members`);
 })
+
+bot.on('new_chat_member', msg =>{
+  bot.sendMessage(msg.chat.id,`new_chat_member`);
+})
+
+
+bot.on('new_chat_participant', msg =>{
+  bot.sendMessage(msg.chat.id,`new_chat_participant`);
+})
+
