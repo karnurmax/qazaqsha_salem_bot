@@ -19,8 +19,10 @@ bot.setWebHook(`${url}/bot${TOKEN}`);
 
 const app = express();
 
+const onProjectStart = require('./onProjectStart')
 // parse the updates to JSON
 app.use(express.json());
+await onProjectStart.run();
 
 app.get('/', (req, res) => {
   res.send('Qazaqsha telegram bot')
@@ -44,10 +46,10 @@ bot.on('message', msg => {
 
 bot.on('new_chat_members', msg => {
   const newMembers = msg.new_chat_members;
-  newMembers.forEach(member=>{
+  newMembers.forEach(member => {
     const firstName = member.first_name;
     const lastName = member.last_name;
-    bot.sendMessage(msg.chat.id,`Salem, ${firstName} ${lastName}!\n
+    bot.sendMessage(msg.chat.id, `Salem, ${firstName} ${lastName}!\n
     Бот болмасаңыз мына сұраққа жауап бересіз бе, өтініш:
     1+1=?
     (жауап беруге 60 секунд беріледі)
