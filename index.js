@@ -19,10 +19,10 @@ bot.setWebHook(`${url}/bot${TOKEN}`);
 
 const app = express();
 
-const onProjectStart = require('./onProjectStart')
+const {run} = require('./onProjectStart')
 // parse the updates to JSON
 app.use(express.json());
-await onProjectStart.run();
+await run();
 
 app.get('/', (req, res) => {
   res.send('Qazaqsha telegram bot')

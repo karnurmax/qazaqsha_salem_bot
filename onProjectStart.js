@@ -5,7 +5,7 @@ async function connect() {
 }
 
 async function run() {
-  connect().then(() => {
+  return connect().then(() => {
     console.log('mongoDb connected')
   })
     .catch(err => console.log(err));
