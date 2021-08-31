@@ -5,10 +5,13 @@ async function connect() {
 }
 
 async function run() {
-  return connect().then(() => {
+  try {
+    await connect()
     console.log('mongoDb connected')
-  })
-    .catch(err => console.log(err));
+  }
+  catch (err) {
+    console.log(err)
+  };
 }
 
 module.exports = { run }

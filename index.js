@@ -22,7 +22,7 @@ const app = express();
 const {run} = require('./onProjectStart')
 // parse the updates to JSON
 app.use(express.json());
-await run();
+run();
 
 app.get('/', (req, res) => {
   res.send('Qazaqsha telegram bot')
